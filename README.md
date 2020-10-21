@@ -46,7 +46,7 @@ its location in image as value.
     Here, in the returned dictionary keys are the detected objects and the value is a list of 
     location of the object in that image. List has X co-ordinate of center, Y co-ordinate of center, Width and Height of object Respectively
     
-* ```draw_objects``` - This function takes the same image and the object-location dictionary as a
+* ```draw_objects(image, object_location)``` - This function takes the same image and the object-location dictionary as a
 argument. It returns the new image with drawn bounding boxes over the detected objects.
 
     Returned Image -

@@ -4,11 +4,11 @@ import numpy as np
 
 
 class Yolo:
-    def __init__(self, weightsPath, confPath, labelPath, YoloShape=(416, 416), threshold_confidence = 0.95):
-        self.Network = cv2.dnn.readNetFromDarknet(confPath, weightsPath)
+    def __init__(self, weights_path, conf_path, label_path, yolo_shape=(416, 416), threshold_confidence = 0.95):
+        self.Network = cv2.dnn.readNetFromDarknet(conf_path, weights_path)
         self.ln = self.Network.getUnconnectedOutLayersNames()
-        self.labels = open(labelPath).read().strip().split('\n')
-        self.YoloShape = YoloShape
+        self.labels = open(label_path).read().strip().split('\n')
+        self.YoloShape = yolo_shape
         self.threshold_confidence = threshold_confidence
 
 #    @jit(_target='cuda')
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     ###### Using Image ---
 
-    # image = cv2.imread('./chair.jpg')
+    # image = cv2.imread('./test-image-2.jpg')
     # objects = yolo.detect_objects(image)
     # print(objects)
     # post_image = yolo.draw_objects(image, objects)
